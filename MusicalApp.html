@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music App</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      .container {
+        height: 100vh;
+        width: 100%;
+        background-image: url(section.jpg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      h1 {
+        font-size: 50px;
+        float: right;
+        color: white;
+        margin: 20px 40px;
+      }
+      .pic {
+        height: 10cm;
+        width: auto;
+        margin-top: 60px;
+        border-radius: 16px;
+        margin-left: 20cm;
+      }
+      .action {
+        font-size: 30px;
+        color: white;
+        margin-top: 5.5cm;
+        margin-left: 2cm;
+        position: absolute;
+      }
+      #icon {
+        height: 1cm;
+        width: auto;
+        border-radius: 30px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <h1><i class="fas fa-headphones"></i> MeoOzIk</h1>
+      </div>
+      <div>
+        <span class="action">
+          <img src="play.png" id="icon" /> <br /><br />
+          <span id="text">
+            CLICK THE BUTTON<br />
+            AND FEEL THE<br />
+            MUSIC
+          </span>
+        </span>
+        <img class="pic" id="img" src="sing.jpeg" />
+      </div>
+    </div>
+
+    <audio id="song">
+      <source src="music.mp3" type="audio/mp3" />
+    </audio>
+
+    <script>
+      var Song = document.getElementById("song");
+      var icon = document.getElementById("icon");
+      var text = document.getElementById("text");
+      var img = document.getElementById("img")
+
+      icon.onclick = function () {
+        if (song.paused) {
+          song.play();
+          icon.src = "pause.jpg";
+          text.innerHTML = " CLICK TO STOP" ;
+          img.src = "giphy.gif"
+        }
+      else {
+          song.pause();
+          icon.src = "play.png";
+          text.innerHTML = " CLICK THE BUTTON <br/> AND FEEL THE <br/> MUSIC" ;
+          img.src = "sing.jpeg"
+        }
+      }
+      
+    </script>
+  </body>
+</html>
